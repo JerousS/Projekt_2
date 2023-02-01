@@ -1,3 +1,9 @@
+"""
+projekt_2.py: druhý projekt do Engeto Online Python Akademie
+author: Jaroslav Shanel
+email: jarek.shanel@gmail.com
+discord: JaroslavS
+"""
 import random
 oddelovac = "-----------------------------------------------"
 print("Hi there!", oddelovac, sep="\n")
@@ -13,11 +19,12 @@ while len(number) !=4:
         number.remove(0)
 random_number = "".join([str(i) for i in number])
 hr = []
+print(random_number)
 guess = ""
 num_of_guesses = 0
 while guess != random_number:
     guess = input()
-    start_time = time.time()
+    hr.clear()
     num_of_guesses+=1
     if len(guess) != 4 or str(guess[0]) == "0" or not guess.isnumeric():
         print("Please put 4digit number not starting with 0")
@@ -27,7 +34,6 @@ while guess != random_number:
             hr.append(i)
         else:
             print("4digit number with no duplicites please")
-            hr.clear()
             break
     else:
         bull = 0
@@ -38,5 +44,6 @@ while guess != random_number:
             elif guess[i] in random_number:
                 cow+=1
         print(bull, "bulls" if bull > 1 else "bull",",", cow, "cows" if cow>1 else "cow")
+        print(oddelovac)
 else:
     print("Correct, you've guessed the right number in",num_of_guesses, "guesses!")    
