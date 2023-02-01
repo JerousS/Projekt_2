@@ -13,7 +13,6 @@ while len(number) !=4:
         number.remove(0)
 random_number = "".join([str(i) for i in number])
 hr = []
-print(random_number)
 guess = ""
 num_of_guesses = 0
 while guess != random_number:
